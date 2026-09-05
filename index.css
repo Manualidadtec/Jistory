@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-linen: #fbf9f5;
+  --color-linen-deep: #f7f5ee;
+  --color-sage: #8fa290;
+  --color-sage-soft: #b9c6ba;
+  --color-earth: #a89377;
+  --color-ink: #1c1d1f;
+  --color-muted: #68696b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fbf9f5;
+  color: #1c1d1f;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #8fa290;
+  color: #fbf9f5;
+}
+
+/* Focus visibility for accessibility */
+:focus-visible {
+  outline: 2px solid #1c1d1f;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* hide scrollbar for mobile carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
